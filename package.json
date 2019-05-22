@@ -23,7 +23,8 @@
   "scripts": {
     "firstbuild": "webpack --config webpack.config.js",
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "startold": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "node server.js",
     "watch": "webpack --watch",
     "heroku-postbuild": "webpack -p" 
   },
