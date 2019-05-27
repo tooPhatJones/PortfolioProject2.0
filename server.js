@@ -13,7 +13,7 @@ app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
   }));
 
-//app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/dist'));
 
 // send the user to index html page inspite of the url
 app.get('/test', (req, res) => {
