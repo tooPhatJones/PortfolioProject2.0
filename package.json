@@ -35,12 +35,13 @@
     "xml-loader": "^1.2.1"
   },
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --open --hot --config webpack.dev.js",
-    "start": "node server.js",
-    "watch": "webpack --watch",
+    "start": "node serverForBuild.js",
     "heroku-postbuild": "npm run build",
-    "server": "node server.js"
+
+    "buildlocal": "webpack --config webpack.prod.js",
+    "devserver": "webpack-dev-server --open --hot --config webpack.dev.js",
+
+    "dev": "node server.js"
   },
   "author": "",
   "license": "ISC",
