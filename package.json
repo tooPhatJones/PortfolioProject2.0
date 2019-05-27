@@ -38,7 +38,7 @@
     "start": "node serverForBuild.js",
     "heroku-postbuild": "npm run build",
 
-    "buildlocal": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "devserver": "webpack-dev-server --open --hot --config webpack.dev.js",
 
     "dev": "node server.js"
