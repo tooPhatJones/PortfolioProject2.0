@@ -37,7 +37,7 @@
   },
   "scripts": {
     "start": "node serverForBuild.js",
-    "heroku-postbuild": "npm run build",
+    "heroku-prebuild": "npm run build",
     "build": "webpack --config webpack.prod.js",
     "devserver": "webpack-dev-server --open --hot --config webpack.dev.js",
     "dev": "node server.js"
