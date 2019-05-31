@@ -36,8 +36,8 @@
     "xml-loader": "^1.2.1"
   },
   "scripts": {
-    "start": "node serverForBuild.js",
-    "heroku-prebuild": "npm run build",
+    "start": "npm run build",
+    "heroku-postbuild": "node serverForBuild.js",
     "build": "webpack --config webpack.prod.js",
     "devserver": "webpack-dev-server --open --hot --config webpack.dev.js",
     "dev": "node server.js"
