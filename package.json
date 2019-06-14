@@ -40,7 +40,7 @@
     "heroku-postbuild": "node serverForBuild.js",
     "build": "webpack --config webpack.prod.js",
     "devserver": "webpack-dev-server --open --hot --config webpack.dev.js",
-    "dev": "node server.js"
+    "dev": "node devServer.js"
   },
   "author": "",
   "license": "ISC",
