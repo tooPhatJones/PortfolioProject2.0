@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 class NavHeader extends Component {
   render() {
     return (
-      <nav>
+      <nav className={"navHeader"}>
         <ul>
           <Link to="/home"><li>Home</li></Link>
           <Link to="/about"><li>About</li></Link>
@@ -13,13 +13,9 @@ class NavHeader extends Component {
         </ul>
         <div className="navHeader">
           <header className="navHeader-header">
-            
-            <h1 className="navHeader-title">Home page</h1>
           </header>
         </div>
       </nav>
-
-
     );
   }
 }

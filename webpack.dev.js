@@ -7,7 +7,8 @@ module.exports = merge(common, {
     devServer: {
         contentBase: './dist',
         hot: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        watchContentBase: true,
     },
     output: {
         publicPath: '/'
