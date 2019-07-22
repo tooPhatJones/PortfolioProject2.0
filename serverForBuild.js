@@ -30,9 +30,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist/index.html'));
 });
 
+
+
 var dateFormat = require('dateformat');
 var now = new Date();
-
-
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`serverForBuild.js listening on port ${port}! And the tIme is `+ dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")));
