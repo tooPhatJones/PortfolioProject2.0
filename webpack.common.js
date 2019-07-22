@@ -12,7 +12,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'PortfolioServer',
             template: require('html-webpack-template'),
-            inject: false,
+            inject: true,
             appMountId: 'root',
         })
     ],

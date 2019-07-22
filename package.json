@@ -40,9 +40,9 @@
     "start": "npm run build",
     "heroku-postbuild": "node serverForBuild.js",
     "build": "webpack --config webpack.prod.js",
-    "buildLocal": "webpack --config webpack.prod.js & node serverForBuild.js",
+    "buildlocal": "webpack --config webpack.prod.js & node serverForBuild.js",
     "devserver": "webpack-dev-server --open --hot --config webpack.dev.js",
-    "dev": "bable-node devServer.js"
+    "dev": "node devServer.js"
   },
   "author": "",
   "license": "ISC",

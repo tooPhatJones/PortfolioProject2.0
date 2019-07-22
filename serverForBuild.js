@@ -25,10 +25,10 @@ app.get("/postgres", (req, response) => {
   });
 });
 
-// send the user to index html page inspite of the url
-// app.get('/*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'dist/index.html'));
-// });
+//send the user to index html page inspite of the url
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'dist/index.html'));
+});
 
 var dateFormat = require('dateformat');
 var now = new Date();
