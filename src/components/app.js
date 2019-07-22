@@ -23,7 +23,7 @@ class App extends Component {
         <NavHeader />
           <header className="App-header">
             <img src={icon} className="App-logo" alt="logo" />
-            <h1 className="App-title">React Express Starter</h1>
+            <h1 className="App-title">React Express Starter test</h1>
           </header>
 
         </div>
