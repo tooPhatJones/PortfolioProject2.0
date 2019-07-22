@@ -16,7 +16,7 @@ let pool = new Pool(dataconfig);
 app.use(express.static(__dirname + "/dist"));
 
 app.get("/postgres", (req, response) => {
-  console.log("insidepostgresfunction");
+  console.log("inside server for build postgress");
 
   pool.query('SELECT * FROM public."Users"', (err, res) => {
     if (err) throw err;
@@ -30,5 +30,9 @@ app.get("/postgres", (req, response) => {
 //   res.sendFile(path.resolve(__dirname, 'dist/index.html'));
 // });
 
+var dateFormat = require('dateformat');
+var now = new Date();
+
+
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`serverForBuild.js listening on port ${port}!`));
+app.listen(port, () => console.log(`serverForBuild.js listening on port ${port}! And the tIme is `+ dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")));
