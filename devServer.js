@@ -12,12 +12,6 @@ app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
   }));
 
-//app.use(express.static(__dirname + '/dist'));
-
-// send the user to index html page inspite of the url
-// app.get('/test', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, '/index.html'));
-// });
 
 const Pool = require('pg').Pool;
 
@@ -39,6 +33,7 @@ app.get('/postgres', (req, response) => {
     //pool.end();
   })
   });
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

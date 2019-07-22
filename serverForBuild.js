@@ -22,6 +22,16 @@ pool.query("SELECT * FROM public.\"Users\"", (err, res) => {
 
 app.use(express.static(__dirname + '/dist'));
 
+app.get('/postgres', (req, response) => {
+  console.log("insidepostgresfunction")
+
+ pool.query("SELECT * FROM public.\"Users\"", (err, res) => {
+  if (err) throw err;
+  response.send(res.rows);
+  //pool.end();
+})
+});
+
 // send the user to index html page inspite of the url
 app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist/index.html'));
