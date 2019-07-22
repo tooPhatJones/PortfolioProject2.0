@@ -31,8 +31,7 @@ app.get('/', (req, res) => {
 });
 
 
-
-var dateFormat = require('dateformat');
-var now = new Date();
+var moment = require('moment-timezone');
+var time = moment().tz("America/Los_Angeles").format('LLLL');
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`serverForBuild.js listening on port ${port}! And the tIme is `+ dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")));
+app.listen(port, () => console.log(`serverForBuild.js listening on port ${port}! And the tIme is `+ time));
