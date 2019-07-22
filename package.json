@@ -38,7 +38,7 @@
   "scripts": {
     "start": "npm run build",
     "heroku-postbuild": "node serverForBuild.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js & node serverForBuild.js",
     "devserver": "webpack-dev-server --open --hot --config webpack.dev.js",
     "dev": "bable-node devServer.js"
   },
