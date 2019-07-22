@@ -5,9 +5,9 @@ const path = require('path');
 const app = express();
 
 
-const { pool } = require('pg');
+const { Pool } = require('pg');
 
-const pool = new pool({
+const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
