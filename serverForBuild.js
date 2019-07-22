@@ -5,21 +5,19 @@ const path = require('path');
 const app = express();
 
 
-const { Client } = require('pg');
+const { pool } = require('pg');
 
-const client = new Client({
+const pool = new pool({
   connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
 
-client.connect();
+pool.connect();
 
-client.query("SELECT * FROM public.\"Users\"", (err, res) => {
+pool.query("SELECT * FROM public.\"Users\"", (err, res) => {
   if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
+  response.send(res)
+  //pool.end();
 });
 
 app.use(express.static(__dirname + '/dist'));

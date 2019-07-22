@@ -33,18 +33,11 @@ let pool = new Pool(dataconfig);
 app.get('/postgres', (req, response) => {
     console.log("insidepostgresfunction")
   
-   standin = {};
    pool.query("SELECT * FROM public.\"Users\"", (err, res) => {
-    console.log(err, res)
-    standin = JSON.stringify({ x: 5, y: 6 });
-    response.send(res)
-    pool.end()
-  
+    if (err) throw err;
+    response.send(res.rows);
+    //pool.end();
   })
-  console.log(standin)
-  const abc = fs.readdirSync('./')
-  console.log(abc);
-    return standin;
   });
 
 const port = process.env.PORT || 5000;
