@@ -6,12 +6,12 @@ import Contact from "./Contact.js";
 //import {hot} from "react-hot-loader";
 import "../css/app.css";
 import icon from '../images/icon.png';
-import { StaticRouter, Switch, Route } from "react-router-dom"
+import { BrowserRouter , StaticRouter, Switch, Route } from "react-router-dom"
 
 class App extends Component {
   render() {
     return (
-      <StaticRouter>
+      <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/home"  component={Home} />
@@ -27,7 +27,7 @@ class App extends Component {
           </header>
 
         </div>
-      </StaticRouter>
+      </BrowserRouter>
     );
   }
 }
