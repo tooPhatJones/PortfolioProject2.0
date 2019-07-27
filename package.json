@@ -40,7 +40,7 @@
     "xml-loader": "^1.2.1"
   },
   "scripts": {
-    "start": "npm run buildnoserver",
+    "start": "npm run        buildnolambda",
     "heroku-postbuild": "node serverForBuild.js",
     "noserver": "webpack --config webpack.prod.js; npm run lambdabuild",
     "buildnolambda": "webpack --config webpack.prod.js;",
