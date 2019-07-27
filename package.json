@@ -42,7 +42,7 @@
   "scripts": {
     "start": "npm run buildnoserver",
     "heroku-postbuild": "node serverForBuild.js",
-    "noserver": "webpack --config webpack.prod.js; npm run netlify-lambda-build",
+    "noserver": "webpack --config webpack.prod.js; npm run lambdabuild",
     "buildlocal": "webpack --config webpack.prod.js & node serverForBuild.js",
     "devserver": "webpack-dev-server --open --hot --config webpack.dev.js",
     "dev": "node devServer.js",
