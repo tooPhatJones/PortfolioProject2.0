@@ -16,21 +16,37 @@ app.use(webpackDevMiddleware(compiler, {
 const Pool = require('pg').Pool;
 
 const dataconfig = {
-  host: 'localhost',
-  user: 'postgres',
-  password: 'Mybffjill1#',
-  database: 'postgres'
+  // host: 'localhost',
+  // user: 'postgres',
+  // password: 'Mybffjill1#',
+  // database: 'postgres'
+  host: 'db-postgresql-sfo2-52096-do-user-6398077-0.db.ondigitalocean.com',
+  user: 'doadmin',
+  password: 'grrctjs755fayjlt',
+  database: 'defaultdb',
+  port: '25060',
+  ssl: true
 }
 
 let pool = new Pool(dataconfig);
 
 app.get('/postgres', (req, response) => {
-    console.log("insidepostgresfunction devserver")
+    console.log("insidepostgresfunction devserver postgres")
   
    pool.query("SELECT * FROM public.\"Users\"", (err, res) => {
     if (err) throw err;
     response.send(res.rows);
-    //pool.end();
+   
+  })
+  });
+
+  app.get('/post', (req, response) => {
+    console.log("insidepostgresfunction devserver post")
+  
+   pool.query("SELECT * FROM public.mytable", (err, res) => {
+    if (err) throw err;
+    response.send(res.rows);
+  
   })
   });
 
