@@ -18,7 +18,7 @@ exports.handler = async function(event, context, callback) {
       console.log("Successfully connected to host");
     }
   });
-  let response ='placeholdertext';
+  let response = "placeholdertext";
   try {
     const qu = "SELECT * FROM public.mytable";
     response = await pool.query(qu);

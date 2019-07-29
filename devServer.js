@@ -30,13 +30,13 @@ const dataconfig = {
 
 let pool = new Pool(dataconfig);
 
-app.get('/postgres', (req, response) => {
-    console.log("insidepostgresfunction devserver postgres")
-   pool.query("SELECT * FROM public.\"Users\"", (err, res) => {
+app.get("/postgres", (req, response) => {
+  console.log("insidepostgresfunction devserver postgres");
+  pool.query('SELECT * FROM public."Users"', (err, res) => {
     if (err) throw err;
     response.send(res.rows);
-  })
   });
+});
 
 app.get("/post", (req, response) => {
   console.log("insidepostgresfunction devserver post");
