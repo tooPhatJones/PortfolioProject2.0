@@ -1,13 +1,19 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
         app: './src/index.js',
     },
     plugins: [
-        // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
+        // new CopyPlugin([
+        //     {
+        //       from: './_redirects',
+        //       to: 'dist/_redirects'
+        //     }
+        //   ]),
        // new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'PortfolioServer',
