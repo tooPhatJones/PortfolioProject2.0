@@ -1,4 +1,4 @@
-//require("babel-polyfill");
+require("babel-polyfill");
 const Pool = require("pg").Pool;
 
 const dataconfig = {

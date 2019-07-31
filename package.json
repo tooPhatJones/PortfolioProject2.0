@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "babel-preset-env": "^1.7.0",
     "dateformat": "^3.0.3",
@@ -47,7 +48,7 @@
   "scripts": {
     "start": "npm run        webpackprod",
     "heroku-postbuild": "node serverForBuild.js",
-    "noserver": "webpack --config webpack.prod.js; npm run lambdabuild",
+    "noserver": "webpack --config webpack.prod.js & npm run lambdabuild",
     "webpackprod": "webpack --config webpack.prod.js",
     "buildlocal": "webpack --config webpack.prod.js & node serverForBuild.js",
     "devserver": "webpack-dev-server --open --hot --config webpack.dev.js",
