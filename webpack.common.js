@@ -22,6 +22,9 @@ module.exports = {
             appMountId: 'root',
         })
     ],
+    optimization: {
+        minimize: false
+      },
     module: {
         rules: [
             {

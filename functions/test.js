@@ -8,6 +8,7 @@ const dataconfig = {
   database: "defaultdb",
   port: "25060",
   ssl: true
+
 };
 exports.handler = async function(event, context, callback) {
   let pool = new Pool(dataconfig);
