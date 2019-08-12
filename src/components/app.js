@@ -3,7 +3,7 @@ import NavHeader from "./navHeader.js";
 import Home from "./Home.js";
 import About from "./About.js";
 import Contact from "./Contact.js";
-import Demo from "./demo";
+import Demo from "./Demo";
 import "../css/app.css";
 import axios from "axios";
 
