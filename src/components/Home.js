@@ -1,21 +1,104 @@
-import React, { Component} from "react";
-import axios from 'axios';
-
+import React, { Component } from "react";
+import "../css/home.css";
+import ReactTable from "react-table";
+import Tooltip from "react-simple-tooltip";
 class Home extends Component {
-  componentDidMount(){
-axios.get('https://8h0rf5gmh3.execute-api.us-west-1.amazonaws.com/dev/simpletest?min=1&max=10').then(res =>{
-  console.log(res)
-
-})
+  constructor(props) {
+    super(props);
+    this.state = {
+      numbers: props.numbers,
+      rows: "",
+      searchval: "jim",
+      reactTablerows: [{}]
+    };
   }
-  render() {
-    return (
-        <div className="Home">
-         
-            <h1 className="Home-title">Home page</h1>
 
-         
-        </div>
+  // test = () => {
+  //  this.props.test();
+  //  };
+
+  enterPressed(event) {
+    var code = event.keyCode || event.which;
+    if (code === 13) {
+      //13 is the enter keycode
+      this.props.search();
+    }
+  }
+
+  render() {
+    const reactTablerows = this.props.state.reactTablerows;
+    return (
+      <div className="Home">
+        <h3 className="Home-title">Try searching an author or title.</h3>
+        <h4>
+          Or leave the search bar blank to see all 1300+ books on my list.
+        </h4>
+        <Tooltip content="You can also hit enter to search">
+          <input
+            placeholder="Search Author or Title"
+            type="text"
+            name="username"
+            onKeyPress={this.enterPressed.bind(this)}
+            onChange={this.props.handleSubmit}
+          />
+        </Tooltip>
+
+        <Tooltip content="Hit enter to search">
+          <button onClick={this.props.search}>Search Book List</button>
+        </Tooltip>
+
+        <ReactTable
+          data={reactTablerows}
+          columns={[
+            {
+              columns: [
+                {
+                  Header: "Title",
+                  accessor: "Title",
+                  minWidth: 300
+                },
+                {
+                  Header: "Author",
+                  accessor: "Author"
+                },
+                {
+                  Header: "Finished",
+                  accessor: "Finished"
+                },
+                {
+                  Header: "Date Recorded",
+                  accessor: "DateRecorded"
+                },
+                {
+                  Header: "My Rating",
+                  accessor: "MyRating"
+                },
+                {
+                  Header: "Average Rating",
+                  accessor: "AverageRating"
+                },
+                {
+                  Header: "Number Of Pages",
+                  accessor: "NumberOfPages"
+                },
+                {
+                  Header: "Publisher",
+                  accessor: "Publisher"
+                },
+                {
+                  Header: "Year Published",
+                  accessor: "YearPublished"
+                }
+              ]
+            }
+          ]}
+          defaultPageSize={50}
+          className="-striped -highlight"
+          style={{
+            height: "780px" // This will force the table body to overflow and scroll, since there is not enough room
+          }}
+        />
+      </div>
     );
   }
 }

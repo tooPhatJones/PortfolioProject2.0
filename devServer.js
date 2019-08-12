@@ -94,6 +94,10 @@ app.get("/post", (req, response) => {
   });
 });
 
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'dist/index.html'));
+});
+
 var moment = require("moment-timezone");
 var time = moment()
   .tz("America/Los_Angeles")

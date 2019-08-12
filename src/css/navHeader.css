@@ -1,8 +1,11 @@
-.navHeader{
+/* navHeader{
+    background: grey;    
+} */
 
-
+ul {
+  list-style: none;
+  display: flex;
 }
-.navlinks{
-    list-style: none;
-    display: 
+a {
+  margin: auto;
 }

@@ -1,0 +1,9 @@
+table{
+    display: block;
+    border: 1px solid;
+    overflow-y: scroll;
+    height: 780px;
+}
+thead{
+
+}
