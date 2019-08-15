@@ -13,7 +13,7 @@ app.use(
   })
 );
 
-const Pool = require("pg").Pool;
+// const Pool = require("pg").Pool;
 
 
 const mysql = require("mysql");
@@ -75,24 +75,24 @@ const dataconfig = {
   ssl: true
 };
 
-let pool = new Pool(dataconfig);
+// let pool = new Pool(dataconfig);
 
-app.get("/postgres", (req, response) => {
-  console.log("insidepostgresfunction devserver postgres");
-  pool.query('SELECT * FROM public."Users"', (err, res) => {
-    if (err) throw err;
-    response.send(res.rows);
-  });
-});
+// app.get("/postgres", (req, response) => {
+//   console.log("insidepostgresfunction devserver postgres");
+//   pool.query('SELECT * FROM public."Users"', (err, res) => {
+//     if (err) throw err;
+//     response.send(res.rows);
+//   });
+// });
 
-app.get("/post", (req, response) => {
-  console.log("insidepostgresfunction devserver post");
+// app.get("/post", (req, response) => {
+//   console.log("insidepostgresfunction devserver post");
 
-  pool.query("SELECT * FROM public.mytable", (err, res) => {
-    if (err) throw err;
-    response.send(res.rows);
-  });
-});
+//   pool.query("SELECT * FROM public.mytable", (err, res) => {
+//     if (err) throw err;
+//     response.send(res.rows);
+//   });
+// });
 
 app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist/index.html'));
