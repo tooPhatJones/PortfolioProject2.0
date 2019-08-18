@@ -5,7 +5,7 @@ import About from "./About.js";
 import Contact from "./Contact.js";
 import Demo from "./Demo";
 import "../css/app.css";
-import axios from "axios";
+
 
 import { BrowserRouter, StaticRouter, Switch, Route } from "react-router-dom";
 import SuggestABook from "./SuggestABook.js";
@@ -19,20 +19,27 @@ class App extends Component {
       searchval: "",
       reactTablerows: [{}]
     };
-    this.search();
+    // this.search();
   }
-  search = () => {
-    console.log(this.state.searchval);
-    axios
-      .get(
-        'https://8h0rf5gmh3.execute-api.us-west-1.amazonaws.com/dev/simpletest?val="' +
-          this.state.searchval +'"'
-      )
-      .then(res => {
-        this.setState({ reactTablerows: res.data });
-      });
-      console.log('serach fired');
-  };
+
+  // search = () => {
+  //   console.log(this.state.searchval);
+  //   axios
+  //     .get(
+  //       'https://8h0rf5gmh3.execute-api.us-west-1.amazonaws.com/dev/simpletest?val="' +
+  //       this.state.searchval + '"'
+  //     )
+  //     .then(res => {
+  //       this.setState({ reactTablerows: res.data });
+  //       console.log('serach fired');
+  //       return res.data;
+  //     });
+
+  // };
+
+   updatesate = (newsate) =>{
+     this.setState({reactTablerows: newsate})
+   } 
 
   handleSubmit = e => {
     this.setState({ searchval: e.target.value });
@@ -44,8 +51,8 @@ class App extends Component {
       <BrowserRouter>
         <NavHeader />
         <Switch>
-          <Route path="/" exact render={() => <Home handleSubmit={this.handleSubmit} search={this.search} state={this.state}/>} />
-          <Route path="/home" render={() => <Home handleSubmit={this.handleSubmit} search={this.search} state={this.state}/>} />
+          <Route path="/" exact render={() => <Home handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
+          <Route path="/home" render={() => <Home handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
           <Route path="/about" exact component={About} />
           <Route path="/contact" exact component={Contact} />
           <Route path="/suggest" exact component={SuggestABook} />

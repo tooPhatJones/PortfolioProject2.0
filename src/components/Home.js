@@ -2,30 +2,45 @@ import React, { Component } from "react";
 import "../css/home.css";
 import ReactTable from "react-table";
 import Tooltip from "react-simple-tooltip";
+import axios from "axios";
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      numbers: props.numbers,
-      rows: "",
-      searchval: "jim",
-      reactTablerows: [{}]
-    };
+    //this.props.updatesate()
+    //this.search()
   }
 
-  // test = () => {
-  //  this.props.test();
-  //  };
+  
+  search = () => {
+    console.log(this.props.state.searchval);
+    axios
+      .get(
+        'https://c38ndos3a1.execute-api.us-east-2.amazonaws.com/dev?val="' +
+        this.props.state.searchval + '"'
+      )
+      .then(res => {
+        this.props.updatesate(res.data);
+        console.log('search fired');
+        return
+      });
+
+  };
+
 
   enterPressed(event) {
     var code = event.keyCode || event.which;
     if (code === 13) {
       //13 is the enter keycode
-      this.props.search();
+      this.search();
     }
   }
 
+  componentDidMount = () =>{
+    this.search();
+  }
+
   render() {
+    
     const reactTablerows = this.props.state.reactTablerows;
     return (
       <div className="Home">
@@ -44,7 +59,7 @@ class Home extends Component {
         </Tooltip>
 
         <Tooltip content="Hit enter to search">
-          <button onClick={this.props.search}>Search Book List</button>
+          <button onClick={this.search}>Search Book List</button>
         </Tooltip>
 
         <ReactTable

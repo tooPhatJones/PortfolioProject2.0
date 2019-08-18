@@ -1,65 +1,62 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import icon from '../images/icon.png';
+import axios from "axios";
+
 
 class SuggestABook extends Component {
-    constructor(props){
-        super(props);
+  constructor(props) {
+    super(props);
 
-      this.state = {
-          email: '',
-          password: '',
-      };
-    }
+    this.state = {
+      email: '',
+      password: '',
+      name: "trustytestname",
+      message: "this is a message",
+      phonenumber: 12346789,
+      email: "email@email.com"
+    };
+  }
 
-    handleEmailChange(e) {
-        this.setState({email: e.target.value});
-    }
-    handlePasswordChange(e) {
-        this.setState({password: e.target.value});
-    }
-
-    test= (e) => {
-        console.log(this.state.email)
-        //this.setState({password: e.target.value});
-    }
-
-
-
-    render = () =>{
-        return (
-        <div>
-            <form name="Login">
-              <input type="text" name="email" value={this.state.email} placeholder="Email Id" className="form-control" onChange={this.handleEmailChange.bind(this)} />
-              <input name="password" value={this.state.password} placeholder="Password" type="password" className="form-control m-b-10" onChange={this.handlePasswordChange.bind(this)} />   
-              <button type="button" className="m-t-20 orange" label="Sign in " onClick={this.test}>Sign in</button> 
-          </form>
-        </div>
+  postSuggestion = () => {
+    axios
+      .post(
+        'https://ncud1985qf.execute-api.us-east-2.amazonaws.com/devforsuggestion/?name="' +
+        this.state.name + '"& message="' +
+        this.state.message + '"& phonenumber="' +
+        this.state.phonenumber + '"& email="' +
+        this.state.email + '"'
       )
-    }
+      .then(res => {
+        //this.props.updatesate(res.data);
+        console.log('post fired');
+        console.log(res);
+        return
+      });
+  };
 
-    // handleSubmit = event => {
-    //     event.preventDefault();
-    //     alert('Your username is: ' + this.input.value);
-    //   };
+  handleChange = (evt) => {
+    const value = evt.target.value;
+    setState({
+      ...state,
+      [evt.target.name]: value
+    });
+  }
 
-    //   test = () =>{
-    //       console.log(this.input.value)
-        
-    //   }
-     
-    //   render() {
-    //     return (
-    //       <form onSubmit={this.handleSubmit}>
-    //         <label htmlFor="username">username</label>
-    //         <input
-    //           type="text"
-    //           name="username"
-    //           ref={(input) => this.input = input}
-    //         />
-    //         <button onClick={this.test}>click me</button>
-    //       </form>
-    //     );
-    //   }
+
+  render = () => {
+    return (
+      <div>
+        <button onClick={this.postSuggestion}>test</button>
+        <input name="username"></input>
+        <input name="s"></input>
+        <input name="username"></input>
+        <input name="username"></input>
+        <input name="username"></input>
+        <input name="username"></input>
+        <input name="username"></input>
+      </div>
+    )
+  }
 }
 
 
