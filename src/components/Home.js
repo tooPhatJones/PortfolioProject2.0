@@ -15,7 +15,7 @@ class Home extends Component {
     console.log(this.props.state.searchval);
     axios
       .get(
-        'https://c38ndos3a1.execute-api.us-east-2.amazonaws.com/dev?val="' +
+        'https://oerkomv6wh.execute-api.us-east-2.amazonaws.com/dev/?val="' +
         this.props.state.searchval + '"'
       )
       .then(res => {

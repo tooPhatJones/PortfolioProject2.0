@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import icon from '../images/icon.png';
 import axios from "axios";
 
 
@@ -8,7 +7,6 @@ class SuggestABook extends Component {
     super(props);
 
     this.state = {
-      email: '',
       password: '',
       name: "trustytestname",
       message: "this is a message",
@@ -19,12 +17,8 @@ class SuggestABook extends Component {
 
   postSuggestion = () => {
     axios
-      .post(
-        'https://ncud1985qf.execute-api.us-east-2.amazonaws.com/devforsuggestion/?name="' +
-        this.state.name + '"& message="' +
-        this.state.message + '"& phonenumber="' +
-        this.state.phonenumber + '"& email="' +
-        this.state.email + '"'
+      .get(
+        'https://jzmjq2p2qe.execute-api.us-east-2.amazonaws.com/dev/?name="'+this.state.name+'"&email="'+this.state.email+'"&phonenumber="'+this.state.phonenumber+'"&message="'+this.state.message+'"'
       )
       .then(res => {
         //this.props.updatesate(res.data);
@@ -32,14 +26,20 @@ class SuggestABook extends Component {
         console.log(res);
         return
       });
+      htis.setstate({
+        name: "",
+        message: "",
+        phonenumber: 0,
+        email: ""
+      })
   };
 
   handleChange = (evt) => {
     const value = evt.target.value;
-    setState({
-      ...state,
+    this.setState({
       [evt.target.name]: value
     });
+    console.log(evt.target.value)
   }
 
 
@@ -47,13 +47,14 @@ class SuggestABook extends Component {
     return (
       <div>
         <button onClick={this.postSuggestion}>test</button>
-        <input name="username"></input>
-        <input name="s"></input>
-        <input name="username"></input>
-        <input name="username"></input>
-        <input name="username"></input>
-        <input name="username"></input>
-        <input name="username"></input>
+        <label>name: </label>
+        <input onChange={this.handleChange} name="name"></input>
+        <label>email: </label>
+        <input onChange={this.handleChange} name="email"></input>
+        <label>phone: </label>
+        <input onChange={this.handleChange} name="phonenumber"></input>
+        <label>message: </label>
+        <input onChange={this.handleChange} name="message"></input>
       </div>
     )
   }

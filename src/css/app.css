@@ -1,5 +1,8 @@
 .hello {
     font-family: 'MyFont';
-    background: url('../images/icon.png');
+    background: url('../images/mugshot.jpg');
   }
 
+  .mugshot{
+    size: 400px
+  }
