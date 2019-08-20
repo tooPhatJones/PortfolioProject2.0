@@ -19,24 +19,9 @@ class App extends Component {
       searchval: "",
       reactTablerows: [{}]
     };
-    // this.search();
   }
 
-  // search = () => {
-  //   console.log(this.state.searchval);
-  //   axios
-  //     .get(
-  //       'https://8h0rf5gmh3.execute-api.us-west-1.amazonaws.com/dev/simpletest?val="' +
-  //       this.state.searchval + '"'
-  //     )
-  //     .then(res => {
-  //       this.setState({ reactTablerows: res.data });
-  //       console.log('serach fired');
-  //       return res.data;
-  //     });
-
-  // };
-
+//update the state for the Home componenet, 
    updatesate = (newsate) =>{
      this.setState({reactTablerows: newsate})
    } 
@@ -55,7 +40,7 @@ class App extends Component {
           <Route path="/home" render={() => <Home handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
           <Route path="/about" exact component={About} />
           <Route path="/contact" exact component={Contact} />
-          <Route path="/suggest" exact component={SuggestABook} />
+          {/* <Route path="/suggestA" exact component={SuggestABook} /> */}
           <Route path="/Demo" exact component={Demo} />
         </Switch>
 

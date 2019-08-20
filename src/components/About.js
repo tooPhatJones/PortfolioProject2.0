@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import icon from '../images/mugshot.jpg';
+import "../css/app.css";
 
 class About extends Component {
   render() {
