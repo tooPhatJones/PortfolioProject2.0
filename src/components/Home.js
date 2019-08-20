@@ -3,6 +3,7 @@ import "../css/home.css";
 import ReactTable from "react-table";
 import Tooltip from "react-simple-tooltip";
 import axios from "axios";
+import SuggestABook from "./SuggestABook.js";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +24,6 @@ class Home extends Component {
         console.log('search fired');
         return
       });
-
   };
 
 
@@ -36,14 +36,15 @@ class Home extends Component {
   }
 
   componentDidMount = () =>{
-    this.search();
+    //this.search();
   }
 
   render() {
-    
+   
     const reactTablerows = this.props.state.reactTablerows;
     return (
       <div className="Home">
+         <SuggestABook />
         <h3 className="Home-title">Try searching an author or title.</h3>
         <h4>
           Or leave the search bar blank to see all 1300+ books on my list.
