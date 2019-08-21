@@ -4,5 +4,17 @@
   }
 
   .mugshot{
-    width: 400px
+    width: 400px;
+    margin: auto;
+  }
+
+  .wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1px;
+  }
+
+  .gridbox{
+
+
   }

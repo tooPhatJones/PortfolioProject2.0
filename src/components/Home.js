@@ -4,6 +4,7 @@ import ReactTable from "react-table";
 import Tooltip from "react-simple-tooltip";
 import axios from "axios";
 import SuggestABook from "./SuggestABook.js";
+import About from "./About.js";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -44,6 +45,12 @@ class Home extends Component {
     const reactTablerows = this.props.state.reactTablerows;
     return (
       <div className="Home">
+        <About />
+         <SuggestABook />
+        <h3 className="Home-title">Try searching an author or title.</h3>
+        <h4>
+          Or leave the search bar blank to see all 1300+ books on my list.
+        </h4>
         <Tooltip content="You can also hit enter to search">
           <input
             placeholder="Search Author or Title"
