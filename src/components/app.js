@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import NavHeader from "./navHeader.js";
-import Home from "./Home.js";
+import Books from "./Books.js";
 import About from "./About.js";
 import Contact from "./Contact.js";
 import Demo from "./Demo";
-import "../css/app.css";
+
 
 
 import { BrowserRouter, StaticRouter, Switch, Route } from "react-router-dom";
-import SuggestABook from "./SuggestABook.js";
+
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class App extends Component {
     };
   }
 
-//update the state for the Home componenet, 
+//update the state for the Books componenet, 
    updatesate = (newsate) =>{
      this.setState({reactTablerows: newsate})
    } 
@@ -34,17 +34,18 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <NavHeader />
+      <div>
+      <NavHeader />
         <Switch>
-          <Route path="/" exact render={() => <Home handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
-          <Route path="/home" render={() => <Home handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
+          <Route path="/" exact render={() => <Books handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
+          <Route path="/books" render={() => <Books handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
           <Route path="/about" exact component={About} />
           <Route path="/contact" exact component={Contact} />
-          {/* <Route path="/suggestA" exact component={SuggestABook} /> */}
           <Route path="/Demo" exact component={Demo} />
         </Switch>
+      </div>
+       
 
-        <div className="App" />
       </BrowserRouter>
     );
   }

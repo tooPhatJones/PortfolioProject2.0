@@ -20,6 +20,7 @@ module.exports = {
             template: require('html-webpack-template'),
             inject: true,
             appMountId: 'root',
+            favicon: "src/images/gif.gif"
         })
     ],
     optimization: {

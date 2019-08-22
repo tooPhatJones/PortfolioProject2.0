@@ -1,18 +1,17 @@
 import React, { Component } from "react";
-import "../css/home.css";
 import ReactTable from "react-table";
 import Tooltip from "react-simple-tooltip";
 import axios from "axios";
-import SuggestABook from "./SuggestABook.js";
+import "../css/books.css";
 import About from "./About.js";
-class Home extends Component {
+class Books extends Component {
   constructor(props) {
     super(props);
     //this.props.updatesate()
     //this.search()
   }
 
-  
+
   search = () => {
     console.log(this.props.state.searchval);
     axios
@@ -36,35 +35,40 @@ class Home extends Component {
     }
   }
 
-  componentDidMount = () =>{
+  componentDidMount = () => {
     //this.search();
   }
 
   render() {
-   
+
     const reactTablerows = this.props.state.reactTablerows;
     return (
-      <div className="Home">
-        <About />
-         <SuggestABook />
-        <h3 className="Home-title">Try searching an author or title.</h3>
-        <h4>
-          Or leave the search bar blank to see all 1300+ books on my list.
+      <div className="Books">
+        <h2>
+          I listen to a lot of book!
+          <br />
+          Below is a list of all books I have recorded on <a href="https://www.goodreads.com/user/show/30980905-david-farley" target="_blank" >Goodreads</a>, that I have listened to in the past 5 years.
+          <br />
+          See the stuff I have been reading!
+          </h2>
+        <div className='searchcontainer'>
+          <h2 className="Books-title">Try searching an author or title.</h2>
+          <h4>
+            Click collumn headers to sort the table by collumn. <br />
+            Hit enter to search.
         </h4>
-        <Tooltip content="You can also hit enter to search">
-          <input
-            placeholder="Search Author or Title"
-            type="text"
-            name="username"
-            onKeyPress={this.enterPressed.bind(this)}
-            onChange={this.props.handleSubmit}
-          />
-        </Tooltip>
-
-        <Tooltip content="Hit enter to search">
-          <button onClick={this.search}>Search Book List</button>
-        </Tooltip>
-
+          <div className="searchbar">
+            <input
+              className="inputclass"
+              placeholder="Search Author or Title"
+              type="text"
+              name="username"
+              onKeyPress={this.enterPressed.bind(this)}
+              onChange={this.props.handleSubmit}
+            />
+            <button onClick={this.search}>Search Book List</button>
+          </div>
+        </div>
         <ReactTable
           data={reactTablerows}
           columns={[
@@ -121,4 +125,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Books;

@@ -1,30 +1,24 @@
 import React, { Component } from "react";
-import "../css/navHeader.css";
 import { Link } from "react-router-dom"
 
 class NavHeader extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
- bob = ()=>{
-this.props.test();
-}
+  bob = () => {
+    this.props.test();
+  }
 
   render() {
     return (
       <nav className={"navHeader"}>
         <ul>
-          <Link to="/home"><li>Home</li></Link>
+          <Link to="/books"><li>Books</li></Link>
           <Link to="/about"><li>About</li></Link>
           <Link to="/contact"><li>Contact</li></Link>
-          {/* <Link to="/suggest"><li>Suggest a Book</li></Link> */}
-          <Link to="/Demo"><li>demo</li></Link>
+          <a href="https://drive.google.com/open?id=1YP1scTyrv3Z-voqNcL6EVOPC5KF4vi2nyamLb9ldfQo" target="blank"><li>Resume</li></a>
         </ul>
-        <div className="navHeader">
-          <header className="navHeader-header">
-          </header>
-        </div>
       </nav>
     );
   }

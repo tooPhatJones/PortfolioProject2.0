@@ -11,26 +11,37 @@ class About extends Component {
         <header className="App-header">
           <div className="wrapper">
             <div className="gridbox">
-              <img src={icon} className="App-logo" alt="logo" className="mugshot" />
+              <img src={icon} className="mugshot" alt="logo" />
             </div>
 
 
             <div className="gridbox">
-              <h1 className="App-title">Hi my name is David Farley</h1>
+              <h1>Hi! my name is David Farley</h1>
+                <h2>Im a self taugh web developer new to the bay area. <br />
+                When Im not working, I love to cycle, read, and have game nights with friends.
+                </h2>
               <h2>
-                I listen to a lot of books. Below is a list of all books I have recorded on <a href="https://www.goodreads.com/user/show/30980905-david-farley" target="_blank" >Goodreads</a>, that I have listened to in the past 5 years. You can search the list by Author or Title, or do alphabetical sorts on any of the rows to see the stuff I am readings.
-            </h2>
-              <h2>
-                Please suggest a book for me to read below!
-            </h2>
-              <h2>
-                If you want to hire me, please Include your contact information.
-            </h2>
+              </h2>
+              <h1>
+                How I made this websight
+              </h1>
+              <h3>
+                I made this websight with Nodejs, webpack, and express hosted on netlify through git.<br />
+                The backend is AWS Lambda and Mysql RDS.<br />
+              </h3>
+              <h3>
+                My next project is a React Native app.
+              </h3>
+              <h3>
+                Stay tuned for updates!
+              </h3>
+
+
+
+
+
             </div>
-
-            {/* <a href="./resumeaugust22019.pdf" target="_blank">resume</a> */}
           </div>
-
         </header>
       </div>
     );
