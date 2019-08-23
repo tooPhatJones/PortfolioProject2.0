@@ -4,6 +4,7 @@ import Books from "./Books.js";
 import About from "./About.js";
 import Contact from "./Contact.js";
 import { BrowserRouter, StaticRouter, Switch, Route } from "react-router-dom";
+import demo from "./demo.js";
 
 class App extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class App extends Component {
 
 
 
-  
+
 }
 
 export default App;
