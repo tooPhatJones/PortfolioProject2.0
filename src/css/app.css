@@ -12,16 +12,9 @@
  text-align: center;
 }
 
-.gridbox {}
-
 .contactclass {
 margin: 25px;
 
-}
-
-.label {
-  /* padding: 100px;
-    grid-column: 1; */
 }
 
 .inputclass {
@@ -50,10 +43,6 @@ textarea {
 .searchcontainer {
   text-align: center;
 }
-
-
-
-thead {}
 
 ul {
   list-style: none;

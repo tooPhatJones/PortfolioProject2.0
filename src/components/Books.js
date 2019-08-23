@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import ReactTable from "react-table";
-import Tooltip from "react-simple-tooltip";
+import "react-table/react-table.css";
 import axios from "axios";
 import "../css/books.css";
-import About from "./About.js";
+
 class Books extends Component {
   constructor(props) {
     super(props);
-    //this.props.updatesate()
-    //this.search()
   }
-
 
   search = () => {
     console.log(this.props.state.searchval);
@@ -36,7 +33,7 @@ class Books extends Component {
   }
 
   componentDidMount = () => {
-    //this.search();
+    this.search();
   }
 
   render() {
