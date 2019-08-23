@@ -30,9 +30,9 @@ class App extends Component {
       <div>
       <NavHeader />
         <Switch>
-          <Route path="/" exact render={() => <Books handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
-          <Route path="/books" render={() => <Books handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
+          <Route path="/" exact component={About} />
           <Route path="/about" exact component={About} />
+          <Route path="/books" render={() => <Books handleSubmit={this.handleSubmit} updatesate={this.updatesate} state={this.state} />} />
           <Route path="/contact" exact component={Contact} />
         </Switch>
       </div>
