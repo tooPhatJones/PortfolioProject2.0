@@ -16,17 +16,17 @@ class About extends Component {
 
 
             <div className="gridbox">
-              <h1>Hi! my name is David Farley</h1>
-                <h2>Im a self taugh web developer new to the bay area. <br />
-                When Im not working, I love to cycle, read, and have game nights with friends.
+              <h1>Hi! My name is David Farley</h1>
+              <h2>I'm a self taught web developer new to the Bay Area. <br />
+                When I'm not working, I love to cycle, read, and have game nights with friends.
                 </h2>
               <h2>
               </h2>
               <h1>
-                How I made this websight
+                How I made this website
               </h1>
               <h3>
-                I made this websight with Nodejs, webpack, and express hosted on netlify through git.<br />
+                I made this website with Nodejs, Webpack, and express hosted on Netlify through Git.<br />
                 The backend is AWS Lambda and Mysql RDS.<br />
               </h3>
               <h3>
@@ -35,11 +35,6 @@ class About extends Component {
               <h3>
                 Stay tuned for updates!
               </h3>
-
-
-
-
-
             </div>
           </div>
         </header>

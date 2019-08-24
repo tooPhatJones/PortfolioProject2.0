@@ -1,22 +1,14 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
         app: './src/index.js',
     },
     plugins: [
-        // new CopyPlugin([
-        //     {
-        //       from: './_redirects',
-        //       to: 'dist/_redirects'
-        //     }
-        //   ]),
-       // new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'PortfolioServer',
+            title: 'Portfolio',
             template: require('html-webpack-template'),
             inject: true,
             appMountId: 'root',
@@ -30,7 +22,6 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-               
                 exclude: /(node_modules|bower_components)/,
                 loader: "babel-loader",
                 options: { presets: ["@babel/env"] }

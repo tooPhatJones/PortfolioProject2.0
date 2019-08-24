@@ -1,46 +1,16 @@
 import React, { Component } from "react";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import axios from "axios";
+
 import "../css/books.css";
+import matchSorter from 'match-sorter'
 
 class Books extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  search = () => {
-    console.log(this.props.state.searchval);
-    axios
-      .get(
-        'https://oerkomv6wh.execute-api.us-east-2.amazonaws.com/dev/?val="' +
-        this.props.state.searchval + '"'
-      )
-      .then(res => {
-        this.props.updatesate(res.data);
-        console.log('search fired');
-        return
-      });
-  };
-
-
-  enterPressed(event) {
-    var code = event.keyCode || event.which;
-    if (code === 13) {
-      //13 is the enter keycode
-      this.search();
-    }
-  }
-
-  componentDidMount = () => {
-    this.search();
-  }
-
   render() {
-
     const reactTablerows = this.props.state.reactTablerows;
     return (
       <div className="Books">
+
         <h2>
           I listen to a lot of book!
           <br />
@@ -51,62 +21,83 @@ class Books extends Component {
         <div className='searchcontainer'>
           <h2 className="Books-title">Try searching an author or title.</h2>
           <h4>
-            Click collumn headers to sort the table by collumn. <br />
-            Hit enter to search.
+            Click column headers to sort the table by column. <br />
+            Or enter text in search bar to filter table by column contents.
         </h4>
-          <div className="searchbar">
-            <input
-              className="inputclass"
-              placeholder="Search Author or Title"
-              type="text"
-              name="username"
-              onKeyPress={this.enterPressed.bind(this)}
-              onChange={this.props.handleSubmit}
-            />
-            <button onClick={this.search}>Search Book List</button>
-          </div>
         </div>
+        {/* this is for the loading icon, it needs all these nested divs to work. */}
+        {this.props.state.loading ? <div className="lds-ring">
+          <div></div><div></div><div></div><div></div></div> : null}
         <ReactTable
           data={reactTablerows}
+          filterable
           columns={[
             {
               columns: [
                 {
                   Header: "Title",
                   accessor: "Title",
-                  minWidth: 300
+                  minWidth: 300,
+                  filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["Title"] }),
+                  filterAll: true
                 },
                 {
                   Header: "Author",
-                  accessor: "Author"
+                  accessor: "Author",
+                  filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["Author"] }),
+                  filterAll: true
                 },
                 {
                   Header: "Finished",
-                  accessor: "Finished"
+                  accessor: "Finished",
+                  filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["Finished"] }),
+                  filterAll: true
+                
                 },
                 {
                   Header: "Date Recorded",
-                  accessor: "DateRecorded"
+                  accessor: "DateRecorded",
+                  filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["DateRecorded"] }),
+                  filterAll: true
                 },
                 {
                   Header: "My Rating",
-                  accessor: "MyRating"
+                  accessor: "MyRating",
+                  filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["MyRating"] }),
+                  filterAll: true
                 },
                 {
                   Header: "Average Rating",
-                  accessor: "AverageRating"
+                  accessor: "AverageRating",
+                  filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["AverageRating"] }),
+                  filterAll: true
                 },
                 {
                   Header: "Number Of Pages",
-                  accessor: "NumberOfPages"
+                  accessor: "NumberOfPages",
+                  filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["NumberOfPages"] }),
+                  filterAll: true
                 },
                 {
                   Header: "Publisher",
-                  accessor: "Publisher"
+                  accessor: "Publisher",
+                  filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["Publisher"] }),
+                  filterAll: true
                 },
                 {
                   Header: "Year Published",
-                  accessor: "YearPublished"
+                  accessor: "YearPublished",
+                  filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["YearPublished"] }),
+                  filterAll: true
                 }
               ]
             }
