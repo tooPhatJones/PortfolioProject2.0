@@ -36,10 +36,6 @@ textarea {
   height: 70px;
 }
 
-.searchcontainer {
-  text-align: center;
-}
-
 ul {
   list-style: none;
   display: flex;
@@ -52,7 +48,7 @@ a {
 .navHeader{
   padding: 25px;
 }
-.Books {
+.instructions {
 text-align: center;
 }
 

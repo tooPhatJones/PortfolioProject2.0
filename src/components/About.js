@@ -26,7 +26,7 @@ class About extends Component {
                 How I made this website
               </h1>
               <h3>
-                I made this website with Nodejs, Webpack, and express hosted on Netlify through Git.<br />
+                I made this website with React, Nodejs, Webpack, and express hosted on Netlify through Git.<br />
                 The backend is AWS Lambda and Mysql RDS.<br />
               </h3>
               <h3>

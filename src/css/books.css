@@ -13,6 +13,8 @@ table {
     height: 64px;
     margin: -55px;
     margin-top: 274px;
+    margin-left: 43%;
+    margin-right: 57%;
   }
   .lds-ring div {
     box-sizing: border-box;

@@ -10,19 +10,20 @@ class Books extends Component {
     const reactTablerows = this.props.state.reactTablerows;
     return (
       <div className="Books">
-
-        <h2>
-          I listen to a lot of book!
+        <div className='instructions'>
+          <h2>
+            I listen to a lot of book!
           <br />
-          Below is a list of all books I have recorded on <a href="https://www.goodreads.com/user/show/30980905-david-farley" target="_blank" >Goodreads</a>, that I have listened to in the past 5 years.
+            Below is a list of all books I have recorded on <a href="https://www.goodreads.com/user/show/30980905-david-farley" target="_blank" >Goodreads</a>, that I have listened to in the past 5 years.
           <br />
-          See the stuff I have been reading!
+            See the stuff I have been reading!
           </h2>
-        <div className='searchcontainer'>
-          <h2 className="Books-title">Try searching an author or title.</h2>
+
+          <h2 className="Books-title">Try searching for your favorite book or author!.</h2>
           <h4>
+            Enter text in search bar to filter table by column contents. <br />
             Click column headers to sort the table by column. <br />
-            Or enter text in search bar to filter table by column contents.
+            Click and drag dividers to re-size columns.
         </h4>
         </div>
         {/* this is for the loading icon, it needs all these nested divs to work. */}
@@ -55,7 +56,7 @@ class Books extends Component {
                   filterMethod: (filter, rows) =>
                     matchSorter(rows, filter.value, { keys: ["Finished"] }),
                   filterAll: true
-                
+
                 },
                 {
                   Header: "Date Recorded",
