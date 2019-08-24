@@ -19,7 +19,7 @@ class Books extends Component {
             See the stuff I have been reading!
           </h2>
 
-          <h2 className="Books-title">Try searching for your favorite book or author!.</h2>
+          <h2 className="Books-title">Try searching for your favorite book or author!</h2>
           <h4>
             Enter text in search bar to filter table by column contents. <br />
             Click column headers to sort the table by column. <br />
