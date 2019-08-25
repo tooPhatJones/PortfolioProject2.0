@@ -68,6 +68,7 @@ class Books extends Component {
                 {
                   Header: "My Rating",
                   accessor: "MyRating",
+                  minWidth: 23,
                   filterMethod: (filter, rows) =>
                     matchSorter(rows, filter.value, { keys: ["MyRating"] }),
                   filterAll: true
@@ -82,6 +83,7 @@ class Books extends Component {
                 {
                   Header: "Number Of Pages",
                   accessor: "NumberOfPages",
+                  minWidth: 110,
                   filterMethod: (filter, rows) =>
                     matchSorter(rows, filter.value, { keys: ["NumberOfPages"] }),
                   filterAll: true
