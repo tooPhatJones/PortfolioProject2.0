@@ -5,6 +5,11 @@ table {
     height: 780px;
   }
 
+  .flexcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   .lds-ring {
     display: inline-block;
@@ -13,7 +18,7 @@ table {
     height: 64px;
     margin: -55px;
     margin-top: 274px;
-    margin-left: 43%;
+    margin-left: 46%;
     margin-right: 57%;
   }
   .lds-ring div {
