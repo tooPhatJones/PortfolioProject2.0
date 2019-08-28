@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 import icon from '../images/mugshot.jpg';
 import "../css/app.css";
 
-class About extends Component {
-  render() {
+function About(props) {
+ // const [name, setName] = useState("Agata");
     return (
       <div className="About">
 
@@ -41,7 +41,7 @@ class About extends Component {
       </div>
     );
   }
-}
+
 
 
 export default About;

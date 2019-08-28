@@ -18,6 +18,7 @@ class NavHeader extends Component {
           <Link to="/books"><li>Books</li></Link>
           <Link to="/contact"><li>Contact</li></Link>
           <a href="https://drive.google.com/open?id=1YP1scTyrv3Z-voqNcL6EVOPC5KF4vi2nyamLb9ldfQo" target="blank"><li>Resume</li></a>
+          <Link to="/demo"><li>Demo</li></Link>
         </ul>
       </nav>
     );

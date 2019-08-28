@@ -15,7 +15,7 @@
     "netlify-lambda": "^1.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.0.1",
     "react-table": "^6.10.0",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
@@ -43,7 +43,7 @@
     "xml-loader": "^1.2.1"
   },
   "scripts": {
-    "start": "npm run        webpackprod",
+    "start": "npm run webpackprod",
     "heroku-postbuild": "node serverForBuild.js",
     "noserver": "webpack --config webpack.prod.js & npm run lambdabuild",
     "webpackprod": "webpack --config webpack.prod.js",

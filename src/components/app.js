@@ -3,6 +3,7 @@ import NavHeader from "./navHeader.js";
 import Books from "./Books.js";
 import About from "./About.js";
 import Contact from "./Contact.js";
+import Demo from "./Demo.js";
 import { BrowserRouter, StaticRouter, Switch, Route } from "react-router-dom";
 import axios from "axios";
 
@@ -45,6 +46,7 @@ class App extends Component {
           <Route path="/about" exact component={About} />
           <Route path="/books" render={() => <Books search={this.search} state={this.state} />} />
           <Route path="/contact" exact component={Contact} />
+          <Route path="/demo" exact component={Demo} />
         </Switch>
       </div>
       </BrowserRouter>
