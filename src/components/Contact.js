@@ -35,7 +35,7 @@ class Contact extends Component {
             phonenumber: "",
             email: ""
           })
-          alert("Thanks for contacting me!\r I will get your message soon.");
+          alert("Thanks for contacting me!\rI will get your message soon.");
         });
     
     }
