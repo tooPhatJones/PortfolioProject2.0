@@ -15,7 +15,7 @@ class App extends Component {
       reactTablerows: [{}],
       loading: true
     };
-  }   
+  }
 
   search = () => {
     this.setState({loading: true});

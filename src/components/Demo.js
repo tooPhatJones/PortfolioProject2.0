@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 export default function Demo(props) {
-   const [name, setName] = useState("Agata");
+  
+  const [name, setName] = useState("Agata");
 
 //   function handleNameChange(e) {
 //     setName(e.target.value);
