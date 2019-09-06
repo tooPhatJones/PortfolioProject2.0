@@ -1,9 +1,9 @@
-import React, { useState, Component } from "react";
+import React, { Component } from "react";
 import icon from '../images/mugshot.jpg';
 import "../css/app.css";
 
-function About(props) {
- // const [name, setName] = useState("Agata");
+class About extends Component {
+  render() {
     return (
       <div className="About">
 
@@ -18,7 +18,8 @@ function About(props) {
             <div className="gridbox">
               <h1>Hi! My name is David Farley</h1>
               <h2>I'm a self taught web developer new to the Bay Area. <br />
-                When I'm not working, I love to cycle, read, and have game nights with friends.
+                I love to learn, and work on websites. <br />
+                When I am not working, I enjoy cycling, reading, and haveing game nights with friends.
                 </h2>
               <h2>
               </h2>
@@ -28,6 +29,9 @@ function About(props) {
               <h3>
                 I made this website with React, Nodejs, Webpack, and express hosted on Netlify through Git.<br />
                 The backend is AWS Lambda and Mysql RDS.<br />
+                Code for this site on <a href="https://github.com/davidfarley71/PortfolioProject2.0">Github</a>.<br />
+               My <a href="https://www.linkedin.com/in/david-farley-221b21a6/">LinkedIn</a> profile.<br />
+
               </h3>
               <h3>
                 My next project is a React Native app.
@@ -41,7 +45,7 @@ function About(props) {
       </div>
     );
   }
-
+}
 
 
 export default About;
