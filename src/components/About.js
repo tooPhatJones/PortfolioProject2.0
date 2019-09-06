@@ -17,9 +17,9 @@ class About extends Component {
 
             <div className="gridbox">
               <h1>Hi! My name is David Farley</h1>
-              <h2>I'm a self taught web developer new to the Bay Area. <br />
+              <h2>I'm a self taught web developer in the San Francisco Bay Area. <br />
                 I love to learn, and work on websites. <br />
-                When I am not working, I enjoy cycling, reading, and haveing game nights with friends.
+                When I am not working, I enjoy cycling, reading, and having game nights with friends.
                 </h2>
               <h2>
               </h2>
