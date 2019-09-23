@@ -23,7 +23,8 @@ class Books extends Component {
           <h4>
             Enter text in search bar to filter table by column contents. <br />
             Click column headers to sort the table by column. <br />
-            Click and drag dividers to re-size columns.
+            Click and drag dividers to re-size columns.<br />
+            Table courtesy of react-table.
         </h4>
         </div>
         {/* this is for the loading icon, it needs all these nested divs to work. */}

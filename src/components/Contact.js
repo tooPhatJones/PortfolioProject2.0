@@ -55,7 +55,7 @@ class Contact extends Component {
           Put in your information to contact me!
         </h2>
         <h3>
-          Optionally, suggest your favorite book I have not read, after you have checkout out my <Link to="/home">reading history</Link>.
+          Optionally, suggest your favorite book I have not read, after you have checked out my <Link to="/home">reading history</Link>.
         </h3>
         <div className="centered">
           <table className="contactTable">

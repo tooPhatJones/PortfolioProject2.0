@@ -64,3 +64,12 @@ div.centered table
     margin: 0 auto; 
     text-align: left;
 }
+
+.App-logo{
+  width: 200px;
+ 
+}
+.applogocontainer{
+  display: flex;
+  justify-content: center;
+}
