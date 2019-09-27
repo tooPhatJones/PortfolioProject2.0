@@ -32,89 +32,91 @@ class Books extends Component {
           {this.props.state.loading ? <div className="lds-ring">
             <div></div><div></div><div></div><div></div></div> : null}
         </div>
+        <div className="reacttablecontainer">
+          <ReactTable
+            data={reactTablerows}
+            filterable
+            columns={[
+              {
+                columns: [
+                  {
+                    Header: "Title",
+                    accessor: "Title",
+                    minWidth: 300,
+                    filterMethod: (filter, rows) =>
+                      matchSorter(rows, filter.value, { keys: ["Title"] }),
+                    filterAll: true
+                  },
+                  {
+                    Header: "Author",
+                    accessor: "Author",
+                    filterMethod: (filter, rows) =>
+                      matchSorter(rows, filter.value, { keys: ["Author"] }),
+                    filterAll: true
+                  },
+                  {
+                    Header: "Finished",
+                    accessor: "Finished",
+                    filterMethod: (filter, rows) =>
+                      matchSorter(rows, filter.value, { keys: ["Finished"] }),
+                    filterAll: true
 
-        <ReactTable
-          data={reactTablerows}
-          filterable
-          columns={[
-            {
-              columns: [
-                {
-                  Header: "Title",
-                  accessor: "Title",
-                  minWidth: 300,
-                  filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["Title"] }),
-                  filterAll: true
-                },
-                {
-                  Header: "Author",
-                  accessor: "Author",
-                  filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["Author"] }),
-                  filterAll: true
-                },
-                {
-                  Header: "Finished",
-                  accessor: "Finished",
-                  filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["Finished"] }),
-                  filterAll: true
+                  },
+                  {
+                    Header: "Date Recorded",
+                    accessor: "DateRecorded",
+                    filterMethod: (filter, rows) =>
+                      matchSorter(rows, filter.value, { keys: ["DateRecorded"] }),
+                    filterAll: true
+                  },
+                  {
+                    Header: "My Rating",
+                    accessor: "MyRating",
+                    minWidth: 23,
+                    filterMethod: (filter, rows) =>
+                      matchSorter(rows, filter.value, { keys: ["MyRating"] }),
+                    filterAll: true
+                  },
+                  {
+                    Header: "Average Rating",
+                    accessor: "AverageRating",
+                    filterMethod: (filter, rows) =>
+                      matchSorter(rows, filter.value, { keys: ["AverageRating"] }),
+                    filterAll: true
+                  },
+                  {
+                    Header: "Number Of Pages",
+                    accessor: "NumberOfPages",
+                    minWidth: 110,
+                    filterMethod: (filter, rows) =>
+                      matchSorter(rows, filter.value, { keys: ["NumberOfPages"] }),
+                    filterAll: true
+                  },
+                  {
+                    Header: "Publisher",
+                    accessor: "Publisher",
+                    filterMethod: (filter, rows) =>
+                      matchSorter(rows, filter.value, { keys: ["Publisher"] }),
+                    filterAll: true
+                  },
+                  {
+                    Header: "Year Published",
+                    accessor: "YearPublished",
+                    filterMethod: (filter, rows) =>
+                      matchSorter(rows, filter.value, { keys: ["YearPublished"] }),
+                    filterAll: true
+                  }
+                ]
+              }
+            ]}
+            defaultPageSize={50}
+            className="-striped -highlight"
+            style={{
+              height: "780px" // This will force the table body to overflow and scroll, since there is not enough room
+            }}
+          />
+        </div>
 
-                },
-                {
-                  Header: "Date Recorded",
-                  accessor: "DateRecorded",
-                  filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["DateRecorded"] }),
-                  filterAll: true
-                },
-                {
-                  Header: "My Rating",
-                  accessor: "MyRating",
-                  minWidth: 23,
-                  filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["MyRating"] }),
-                  filterAll: true
-                },
-                {
-                  Header: "Average Rating",
-                  accessor: "AverageRating",
-                  filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["AverageRating"] }),
-                  filterAll: true
-                },
-                {
-                  Header: "Number Of Pages",
-                  accessor: "NumberOfPages",
-                  minWidth: 110,
-                  filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["NumberOfPages"] }),
-                  filterAll: true
-                },
-                {
-                  Header: "Publisher",
-                  accessor: "Publisher",
-                  filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["Publisher"] }),
-                  filterAll: true
-                },
-                {
-                  Header: "Year Published",
-                  accessor: "YearPublished",
-                  filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["YearPublished"] }),
-                  filterAll: true
-                }
-              ]
-            }
-          ]}
-          defaultPageSize={50}
-          className="-striped -highlight"
-          style={{
-            height: "780px" // This will force the table body to overflow and scroll, since there is not enough room
-          }}
-        />
       </div>
     );
   }

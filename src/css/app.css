@@ -73,3 +73,7 @@ div.centered table
   display: flex;
   justify-content: center;
 }
+
+.reacttablecontainer{
+  margin: 10px;
+}
