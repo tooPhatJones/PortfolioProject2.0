@@ -1,6 +1,18 @@
+body {
+  background: darkslategrey;
+  color: floralwhite;
+}
+
+body a {
+  color: #8cc5ff;
+}
+body a:visited {
+  color: black;
+}
+
 .hello {
-  font-family: 'MyFont';
-  background: url('../images/mugshot.jpg');
+  font-family: "MyFont";
+  background: url("../images/mugshot.jpg");
 }
 
 .mugshot {
@@ -9,14 +21,13 @@
 }
 
 .About {
- text-align: center;
+  text-align: center;
 }
 
 .contactclass {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .inputclass {
@@ -47,33 +58,59 @@ a {
   margin: auto;
 }
 
-.navHeader{
+.navHeader {
   padding: 25px;
 }
+
+.navHeader a {
+  background: darkcyan;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 .instructions {
-text-align: center;
+  text-align: center;
 }
 
-div.centered 
-{
-    text-align: center;
+div.centered {
+  text-align: center;
+  background: darkcyan;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-div.centered table 
-{
-    margin: 0 auto; 
-    text-align: left;
+div.centered table {
+  margin: 0 auto;
+  text-align: left;
 }
 
-.App-logo{
-  width: 200px;
- 
+.App-logo {
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
 }
-.applogocontainer{
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.applogocontainer {
   display: flex;
   justify-content: center;
 }
 
-.reacttablecontainer{
+.reacttablecontainer {
   margin: 10px;
 }

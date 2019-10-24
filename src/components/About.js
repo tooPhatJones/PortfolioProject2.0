@@ -29,8 +29,8 @@ class About extends Component {
               <h3>
                 I made this website with React, Nodejs, Webpack, and express hosted on Netlify through Git.<br />
                 The backend is AWS Lambda and Mysql RDS.<br />
-                Code for this site on <a href="https://github.com/davidfarley71/PortfolioProject2.0">Github</a>.<br />
-               My <a href="https://www.linkedin.com/in/david-farley-221b21a6/">LinkedIn</a> profile.<br />
+                Code for this site on <a target="blank" href="https://github.com/davidfarley71/PortfolioProject2.0">Github</a>.<br />
+               My <a target="blank" href="https://www.linkedin.com/in/david-farley-221b21a6/">LinkedIn</a> profile.<br />
 
               </h3>
               <h3>
