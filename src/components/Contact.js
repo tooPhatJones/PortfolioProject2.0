@@ -89,7 +89,7 @@ class Contact extends Component {
                   <label className="label">Message: </label>
                 </td>
                 <td>
-                  <textarea className="inputclass" onChange={this.handleChange} name="message"></textarea>
+                  <textarea className="textareaclass" onChange={this.handleChange} name="message"></textarea>
                 </td>
               </tr>
               <tr>

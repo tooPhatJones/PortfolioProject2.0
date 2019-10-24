@@ -32,6 +32,11 @@ body a:visited {
 
 .inputclass {
   border-radius: 3px;
+  width: 80%;
+}
+
+.textareaclass{
+  border-radius: 3px;
 }
 
 .contactTable {
