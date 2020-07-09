@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
-import logo from '../images/logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class NavHeader extends Component {
   constructor(props) {
@@ -14,9 +14,6 @@ class NavHeader extends Component {
   render() {
     return (
       <nav className={"navHeader"}>
-        <div class="applogocontainer">
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
         <ul>
           <Link to="/about"><li>About</li></Link>
           <Link to="/books"><li>Books</li></Link>

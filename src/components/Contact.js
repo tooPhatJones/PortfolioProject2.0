@@ -37,7 +37,6 @@ class Contact extends Component {
           })
           alert("Thanks for contacting me!\rI will get your message soon.");
         });
-    
     }
   };
 

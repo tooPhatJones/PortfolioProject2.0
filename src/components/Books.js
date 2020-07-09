@@ -29,8 +29,6 @@ class Books extends Component {
         </div>
         {/* this is for the loading icon, it needs all these nested divs to work. */}
         <div className="flexcontainer">
-          {this.props.state.loading ? <div className="lds-ring">
-            <div></div><div></div><div></div><div></div></div> : null}
         </div>
         <div className="reacttablecontainer">
           <ReactTable
