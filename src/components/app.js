@@ -16,6 +16,23 @@ class App extends Component {
     };
   }
 
+  // search = () => {
+  //   axios
+  //     .get(
+  //       'https://oerkomv6wh.execute-api.us-east-2.amazonaws.com/dev/?val="' +
+  //       this.state.searchval + '"'
+  //     )
+  //     .then(res => {
+  //       this.setState({reactTablerows: res.data});
+  //       console.log('got books');
+  //       return
+  //     });
+  // };
+
+  // componentDidMount =() =>{
+  //   // this.search();
+  // }
+
   render() {
     return (
       <BrowserRouter>
